@@ -57,7 +57,7 @@ const [asteroidLoading, setAsteroidLoading] = useState(true);
 const [asteroidError, setAsteroidError] = useState("");
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/apod")
+ fetch("https://nasa-space-explorer-ehcz.onrender.com/api/apod")
     .then((response) => {
       if (!response.ok) {
         throw new Error("NASA verisi alınamadı");
@@ -80,8 +80,8 @@ useEffect(() => {
   setMarsError("");
 
   fetch(
-    `http://localhost:5000/api/mars?rover=${selectedRover}`
-  )
+  `https://nasa-space-explorer-ehcz.onrender.com/api/mars?rover=${selectedRover}`
+)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Mars verileri alınamadı");
@@ -102,7 +102,7 @@ useEffect(() => {
     });
 }, [selectedRover]);
 useEffect(() => {
-  fetch("http://localhost:5000/api/asteroids")
+  fetch("https://nasa-space-explorer-ehcz.onrender.com/api/asteroids")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Asteroid verileri alınamadı");
